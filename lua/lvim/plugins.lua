@@ -36,10 +36,10 @@ local core_plugins = {
     event = "User FileOpened",
     lazy = true,
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = not vim.startswith(lvim.colorscheme, "tokyonight"),
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = not vim.startswith(lvim.colorscheme, "tokyonight"),
+  -- },
   {
     "lunarvim/lunar.nvim",
     lazy = lvim.colorscheme ~= "lunar",
@@ -153,24 +153,24 @@ local core_plugins = {
   },
 
   -- NvimTree
-  {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("lvim.core.nvimtree").setup()
-    end,
-    enabled = lvim.builtin.nvimtree.active,
-    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
-    event = "User DirOpened",
-  },
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   config = function()
+  --     require("lvim.core.nvimtree").setup()
+  --   end,
+  --   enabled = lvim.builtin.nvimtree.active,
+  --   cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+  --   event = "User DirOpened",
+  -- },
   -- Lir
-  {
-    "tamago324/lir.nvim",
-    config = function()
-      require("lvim.core.lir").setup()
-    end,
-    enabled = lvim.builtin.lir.active,
-    event = "User DirOpened",
-  },
+  -- {
+  --   "tamago324/lir.nvim",
+  --   config = function()
+  --     require("lvim.core.lir").setup()
+  --   end,
+  --   enabled = lvim.builtin.lir.active,
+  --   event = "User DirOpened",
+  -- },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -204,15 +204,15 @@ local core_plugins = {
   },
 
   -- project.nvim
-  {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("lvim.core.project").setup()
-    end,
-    enabled = lvim.builtin.project.active,
-    event = "VimEnter",
-    cmd = "Telescope projects",
-  },
+  -- {
+  --   "ahmedkhalf/project.nvim",
+  --   config = function()
+  --     require("lvim.core.project").setup()
+  --   end,
+  --   enabled = lvim.builtin.project.active,
+  --   event = "VimEnter",
+  --   cmd = "Telescope projects",
+  -- },
 
   -- Icons
   {
@@ -254,27 +254,27 @@ local core_plugins = {
   },
 
   -- Debugging
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("lvim.core.dap").setup()
-    end,
-    lazy = true,
-    dependencies = {
-      "rcarriga/nvim-dap-ui",
-    },
-    enabled = lvim.builtin.dap.active,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --     require("lvim.core.dap").setup()
+  --   end,
+  --   lazy = true,
+  --   dependencies = {
+  --     "rcarriga/nvim-dap-ui",
+  --   },
+  --   enabled = lvim.builtin.dap.active,
+  -- },
 
   -- Debugger user interface
-  {
-    "rcarriga/nvim-dap-ui",
-    config = function()
-      require("lvim.core.dap").setup_ui()
-    end,
-    lazy = true,
-    enabled = lvim.builtin.dap.active,
-  },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   config = function()
+  --     require("lvim.core.dap").setup_ui()
+  --   end,
+  --   lazy = true,
+  --   enabled = lvim.builtin.dap.active,
+  -- },
 
   -- alpha
   {
@@ -332,19 +332,19 @@ local core_plugins = {
     enabled = lvim.builtin.indentlines.active,
   },
 
-  {
-    "lunarvim/onedarker.nvim",
-    branch = "freeze",
-    config = function()
-      pcall(function()
-        if lvim and lvim.colorscheme == "onedarker" then
-          require("onedarker").setup()
-          lvim.builtin.lualine.options.theme = "onedarker"
-        end
-      end)
-    end,
-    lazy = lvim.colorscheme ~= "onedarker",
-  },
+  -- {
+  --   "lunarvim/onedarker.nvim",
+  --   branch = "freeze",
+  --   config = function()
+  --     pcall(function()
+  --       if lvim and lvim.colorscheme == "onedarker" then
+  --         require("onedarker").setup()
+  --         lvim.builtin.lualine.options.theme = "onedarker"
+  --       end
+  --     end)
+  --   end,
+  --   lazy = lvim.colorscheme ~= "onedarker",
+  -- },
 
   {
     "lunarvim/bigfile.nvim",
